@@ -36,7 +36,7 @@ public class Ejemplo0 {
             long inicioTemp = System.nanoTime();
 
             while ((linea = lector.readLine()) != null) {
-                String[] datos = linea.split(",");
+                String[] datos = linea.split("\t");
 
                 if (datos.length < 8) {
                     System.out.println("Línea inválida, saltando: " + linea);
@@ -44,14 +44,14 @@ public class Ejemplo0 {
                 }
 
                 try {
-                    statement.setInt(1, Integer.parseInt(datos[0]));
+                    statement.setString(1,datos[0]);
                     statement.setString(2, datos[1]);
                     statement.setString(3, datos[2]);
                     statement.setString(4, datos[3]);
-                    statement.setInt(5, Integer.parseInt(datos[4]));
+                    statement.setString(5, datos[4]);
                     statement.setString(6, datos[5]);
                     statement.setString(7, datos[6]);
-                    statement.setInt(8, Integer.parseInt(datos[7]));
+                    statement.setString(8, datos[7]);
 
                     statement.addBatch();
 
